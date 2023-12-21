@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>lesson3.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+lesson3.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Write a program that repeatedly prompts a user for integer</span>
+<span class="s0"># numbers until the user enters 'done'.</span>
+<span class="s0"># Once 'done' is entered, print out the largest and smallest of the numbers.</span>
+<span class="s0"># If the user enters anything other than a valid number catch it with a try/except and</span>
+<span class="s0"># put out an appropriate message and ignore the number.</span>
+<span class="s0"># Enter 7, 2, bob, 10, and 4 and match the output below.</span>
+
+<span class="s1">largest = </span><span class="s2">None</span>
+<span class="s1">smallest = </span><span class="s2">None</span>
+
+<span class="s2">while True</span><span class="s1">:</span>
+    <span class="s1">user_input = input(</span><span class="s3">&quot;Enter an integer number or 'done' to finish: &quot;</span><span class="s1">)</span>
+
+    <span class="s2">if </span><span class="s1">user_input.lower() == </span><span class="s3">'done'</span><span class="s1">:</span>
+        <span class="s2">break  </span><span class="s0"># Exit the loop if user enters 'done'</span>
+
+    <span class="s2">try</span><span class="s1">:</span>
+        <span class="s1">number = int(user_input)  </span><span class="s0"># Convert input to an integer</span>
+        <span class="s0"># Check for the largest number</span>
+        <span class="s2">if </span><span class="s1">largest </span><span class="s2">is None or </span><span class="s1">number &gt; largest:</span>
+            <span class="s1">largest = number</span>
+        <span class="s0"># Check for the smallest number</span>
+        <span class="s2">if </span><span class="s1">smallest </span><span class="s2">is None or </span><span class="s1">number &lt; smallest:</span>
+            <span class="s1">smallest = number</span>
+    <span class="s2">except </span><span class="s1">ValueError:</span>
+        <span class="s1">print(</span><span class="s3">&quot;Invalid input&quot;</span><span class="s1">)</span>
+        <span class="s2">continue  </span><span class="s0"># Skip to the next iteration if input is not an integer</span>
+
+<span class="s2">if </span><span class="s1">largest </span><span class="s2">is not None and </span><span class="s1">smallest </span><span class="s2">is not None</span><span class="s1">:</span>
+    <span class="s1">print(</span><span class="s3">f&quot;Maximum is </span><span class="s2">{</span><span class="s1">largest</span><span class="s2">}</span><span class="s3">&quot;</span><span class="s1">)</span>
+    <span class="s1">print(</span><span class="s3">f&quot;Minimum is </span><span class="s2">{</span><span class="s1">smallest</span><span class="s2">}</span><span class="s3">&quot;</span><span class="s1">)</span>
+<span class="s2">else</span><span class="s1">:</span>
+    <span class="s1">print(</span><span class="s3">&quot;No valid numbers were entered.&quot;</span><span class="s1">)</span>
+</pre>
+</body>
+</html>
